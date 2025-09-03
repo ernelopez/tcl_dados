@@ -10,10 +10,7 @@ sd_dado = np.sqrt(17.5 / 6)
 # Función adaptada
 def ilustrar_tcl(n, m, m_dado, sd_dado, clases=20):
     muestras = np.random.randint(1, 7, size=(m, n))
-    
-    # Mostrar la primera muestra
-    st.write(f"{m} como estas: ", muestras[0])
-    
+        
     promedios = np.mean(muestras, axis=1)
     
     fig, ax = plt.subplots(figsize=(8,5))
@@ -58,7 +55,3 @@ with col2:
     if st.button("Resetear"):
         st.session_state.muestras = None
         st.experimental_rerun()  # recarga la app para limpiar
-
-# Mostrar la primera muestra si hay tiradas
-if st.session_state.muestras is not None:
-    st.write("Primera muestra actual:", st.session_state.muestras[0])
